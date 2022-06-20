@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/webReact/static/js/main.ab063e70.js",
-    "index.html": "/webReact/index.html",
-    "main.ab063e70.js.map": "/webReact/static/js/main.ab063e70.js.map"
+    "main.js": "/react-web/static/js/main.ab063e70.js",
+    "index.html": "/react-web/index.html",
+    "main.ab063e70.js.map": "/react-web/static/js/main.ab063e70.js.map"
   },
   "entrypoints": [
     "static/js/main.ab063e70.js"
