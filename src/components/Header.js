@@ -5,6 +5,7 @@ import {  Stack, Circle, Flex, Box, Text,Spacer  } from '@chakra-ui/layout';
 import { Button, Image } from '@chakra-ui/react'
 import { FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
 import { IconButton } from '@chakra-ui/button';
+import {  HStack} from '@chakra-ui/layout';
 
 export default function Header() {
 
@@ -27,24 +28,31 @@ export default function Header() {
                               Nicola Ivanov
                          </Text >
                          <Text pt={"5"}   fontSize={"2xl"} fontWeight="semibold" color={isDark ? "gray.200" : "black"} >
-                         I am a young developer, studying at MTUCI. I work on  various C++, Java, Python, Mathlab,<br></br>Web design and Art projects.
+                              I am a young developer, studying at MTUCI. I work on  various C++, Java, Python, Mathlab,<br></br>Web design and Art projects.
                          </Text>
                          <Spacer>
 
                          </Spacer>
-                         <Button mt={8}  bgGradient="linear(to-r, violet,blue.500 )"  
-                         _hover={{ bgGradient: 'linear(to-l, red.500, yellow.500)',}}
-                         onClick={()=>window.open("https://vk.com/karkron")}>
-                              Contact me  
-                         </Button>
-                         
-                         <IconButton mt={8} ml={8} size="md"  icon={<FaBehance/>} isRound='true' onClick={()=>window.open("https://www.behance.net/nico_1008")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
-                         <IconButton mt={8} ml={8} size="md"  icon={<FaGithub/>} isRound='true' onClick={()=>window.open("https://github.com/nico1008")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
-                         <IconButton mt={8} ml={8} size="md"  icon={<FaTelegram/>} isRound='true' onClick={()=>window.open("https://t.me/nico_1008k")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+
+                         <HStack spacing={"10"} mt={"10"} >
+
+                              <Button size={"lg"} bgGradient="linear(to-r, violet,blue.500 )" 
+                                   _hover={{ bgGradient: 'linear(to-l, red.500, yellow.500)',}}
+                                   onClick={()=>window.open("https://vk.com/karkron")}>
+                                   Contact me  
+                              </Button>
+                              
+                              <IconButton  size="lg"  icon={<FaBehance/>}  onClick={()=>window.open("https://www.behance.net/nico_1008")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+                              <IconButton  size="lg"  icon={<FaGithub/>}  onClick={()=>window.open("https://github.com/nico1008")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+                              <IconButton  size="lg"  icon={<FaTelegram/>}  onClick={()=>window.open("https://t.me/nico_1008k")}  _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+
+                         </HStack>
+                        
                     </Box>
                     <Image alignSelf="center" mt={isNotSmallerScreen ? "0": "10"} mb = {isNotSmallerScreen ? "0" : "10"} borderRadius='full'
-                    backgroundColor={"transparent"} boxShadow="lg" boxSize={"300px"} opacity="1" border='8px solid black'
+                    backgroundColor={"transparent"} boxShadow="lg" boxSize={isNotSmallerScreen ? "300px":"250px"} opacity="1" border='8px solid black'
                     src='https://avatars.githubusercontent.com/u/70664528?s=400&u=861e9fafb08a103ed6de3852531877eecfa63036&v=4'>
+                         
                     </Image>   
                </Flex> 
           </Stack>

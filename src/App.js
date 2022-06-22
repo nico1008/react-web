@@ -4,8 +4,8 @@ import { IconButton } from '@chakra-ui/button';
 import { Flex,VStack,Heading,Spacer }  from "@chakra-ui/layout";
 import { FaSun, FaMoon, FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
 import Header from './components/Header';
-import Social from './components/Social';
-import Profile from './components/Profile';
+import Profile from './components/Projects';
+import Projects from './components/Projects';
 
 function App() {
 
@@ -29,8 +29,7 @@ function App() {
       </Flex  >
 
       <Header ></Header>
-      <Social></Social>
-      <Profile></Profile>
+      <Projects></Projects>
 
     </VStack>
   )
