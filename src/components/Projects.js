@@ -45,7 +45,7 @@ export default function () {
 
           </Flex>
 
-          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="orange.300" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
+          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="orange.300" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://www.behance.net/nico_1008")}>
 
             <Icon ccolor={isDark ? "gray.200" : "black"} p="4" as={GiPencilBrush} w="24" h="24"></Icon>
               <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"3xl"} fontWeight="semibold"> Art</Text>
