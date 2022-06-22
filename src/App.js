@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import { useMediaQuery } from '@chakra-ui/media-query';
 
+
 function App() {
 
   const { colorMode, toggleColorMode} = useColorMode();

@@ -5,17 +5,18 @@ import {  Stack, Circle, Flex, Box, Text,Spacer  } from '@chakra-ui/layout';
 import { Button, Image } from '@chakra-ui/react'
 import { FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
 import { IconButton } from '@chakra-ui/button';
-import {  HStack} from '@chakra-ui/layout';
+import { motion} from 'framer-motion'
+
 
 export default function Header() {
 
      const {colorMode} = useColorMode();
      const isDark = colorMode ==="dark";
-     const [isNotSmallerScreen]=useMediaQuery("(min-width:600px)");
-
+     const [isNotSmallerScreen]=useMediaQuery("(min-width:600px)");    
+    
      return (
           <Stack >
-               <Circle  position="absolute" mt={"100px"} mr="50px" bg="pink" opacity={isNotSmallerScreen ? "0.1": "0"} w="300px" h="300px" alignSelf={"flex-end"}></Circle>
+                 /* position="absolute" mt={"100px"} mr="50px" bg="pink" opacity={isNotSmallerScreen ? "0.1": "0"} w="300px" h="300px" alignSelf={"flex-end"}*/
                <Flex backgroundColor={isDark ? "#2953A6" : "#00FF80"} borderRadius="20px"  direction ={isNotSmallerScreen ? "row" : "column"}
                     spacing="200px" p={isNotSmallerScreen ? "32" : "4"} pl={isNotSmallerScreen ? "16" : "4"} 
                     alignSelf="flex-start">
@@ -23,7 +24,8 @@ export default function Header() {
                          <Text fontSize={"5xl"} fontWeight="semibold"  >
                               Hello, my name is 
                          </Text>
-                         <Text fontSize={"7xl"} fontWeight="bold" bgGradient="linear(to-r, coral, violet, purple)" bgClip='text'>
+                         <Text as={motion.div} initial={{x: -1000}} animate={{x:0}} transition={{delay:1}}
+                         fontSize={"7xl"} fontWeight="bold" bgGradient="linear(to-r, coral, violet, purple)" bgClip='text'>
                               Nicola Ivanov
                          </Text >
                          <Text pt={"5"}   fontSize={"2xl"} fontWeight="semibold" color={isDark ? "gray.200" : "black"} >
@@ -37,8 +39,7 @@ export default function Header() {
 
                               <Button size={"lg"} bgGradient="linear(to-r, violet,blue.500 )" 
                                    _hover={{ bgGradient: 'linear(to-l, red.500, yellow.500)',}}
-                                   onClick={()=>window.open("https://vk.com/karkron")} ml ={isNotSmallerScreen ? "7" : "1" }
-                              >
+                                   onClick={()=>window.open("https://vk.com/karkron")} ml ={isNotSmallerScreen ? "7" : "1" }>
                                    Contact me  
                               </Button>
                               
@@ -55,10 +56,11 @@ export default function Header() {
                         
                     </Box>
                     <Image alignSelf="center" mt={isNotSmallerScreen ? "0": "10"} mb = {isNotSmallerScreen ? "0" : "10"} borderRadius='full'
-                    backgroundColor={"transparent"} boxShadow="lg" boxSize={isNotSmallerScreen ? "300px":"250px"} opacity="1" border='8px solid black'
-                    src='https://avatars.githubusercontent.com/u/70664528?s=400&u=861e9fafb08a103ed6de3852531877eecfa63036&v=4'>
-                         
-                    </Image>   
+                    backgroundColor={"transparent"} boxShadow="lg" boxSize={isNotSmallerScreen ? "400px":"250px"} opacity="1" border='8px solid black'
+                    src='https://avatars.githubusercontent.com/u/70664528?s=400&u=861e9fafb08a103ed6de3852531877eecfa63036&v=4'/>
+                       
+                     
+                    
                </Flex> 
           </Stack>
 

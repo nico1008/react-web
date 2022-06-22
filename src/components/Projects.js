@@ -6,6 +6,7 @@ import {SiCplusplus } from 'react-icons/si'
 import {FaJava, FaPython } from 'react-icons/fa'
 import {GiPencilBrush} from 'react-icons/gi'
 import { useColorMode } from '@chakra-ui/color-mode';
+import { motion} from 'framer-motion'
 
 
 
@@ -23,31 +24,31 @@ export default function () {
           Here are some of my projects:
         </Text>
         <Flex direction={isNotSmallerScreen ? "row":"column"} mt={8}>
-          <Flex rounded={"2xl"} direction="column" mt={"4"} bg="blue.400" h="40vh" w="40vh" justify={"flex-end"}>
+          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"} bg="blue.400" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")} >
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={SiCplusplus} w="24" h="24"></Icon>
-              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"xl"} fontWeight="semibold"> C++</Text>
+              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"3xl"} fontWeight="semibold"> C++</Text>
 
           </Flex>
           
-          <Flex rounded={"2xl"} direction="column" mt={"4"}  ml={isNotSmallerScreen ? 4:0}  bg="pink.200" h="40vh" w="40vh" justify={"flex-end"}>
+          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"}  ml={isNotSmallerScreen ? 4:0}  bg="pink.200" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaJava} w="24" h="24"></Icon>
-              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"xl"} fontWeight="semibold"> Java</Text>
+              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"3xl"} fontWeight="semibold"> Java</Text>
 
           </Flex>
 
-          <Flex rounded={"2xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="blue.400" h="40vh" w="40vh" justify={"flex-end"}>
+          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="blue.400" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaPython} w="24" h="24"></Icon>
-              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"xl"} fontWeight="semibold"> Python</Text>
+              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"3xl"} fontWeight="semibold"> Python</Text>
 
           </Flex>
 
-          <Flex rounded={"2xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="orange.300" h="40vh" w="40vh" justify={"flex-end"}>
+          <Flex as={motion.div} whileHover={{scale:1.2}} rounded={"3xl"} direction="column" mt={"4"} ml={isNotSmallerScreen ? 4:0}  bg="orange.300" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
 
             <Icon ccolor={isDark ? "gray.200" : "black"} p="4" as={GiPencilBrush} w="24" h="24"></Icon>
-              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"xl"} fontWeight="semibold"> Art</Text>
+              <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"3xl"} fontWeight="semibold"> Art</Text>
 
           </Flex>
         
