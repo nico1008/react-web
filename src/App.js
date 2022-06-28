@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react'
 import { useColorMode } from '@chakra-ui/color-mode';
 import { IconButton } from '@chakra-ui/button';
 import { Flex,VStack,Heading,Spacer }  from "@chakra-ui/layout";
@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import { useBreakpointValue } from '@chakra-ui/react'
+import WebFont from 'webfontloader';
 
 import { motion} from 'framer-motion'
 
@@ -15,6 +16,14 @@ function App() {
 
   const { colorMode, toggleColorMode} = useColorMode();
   const isDark = colorMode ==="dark";
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Comfortaa', 'Roboto']
+      }
+    });
+   }, []);
   
   return(
     <VStack p={5} pb={0}>

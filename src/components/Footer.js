@@ -1,13 +1,22 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { IconButton } from '@chakra-ui/button';
 import {Flex, Text,Spacer  } from '@chakra-ui/layout';
 import { FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
 import { useColorMode } from '@chakra-ui/color-mode';
+import WebFont from 'webfontloader';
 
 export default function Footer() {
 
      const { colorMode} = useColorMode();
      const isDark = colorMode ==="dark";
+
+     useEffect(() => {
+      WebFont.load({
+        google: {
+          families: ['Comfortaa', 'Roboto']
+        }
+      });
+     }, []);
      
 
   return (
@@ -16,7 +25,9 @@ export default function Footer() {
       alignSelf="flex-start" width={"100%"} >
       
      
-      <Text mt={"2.5"} ml={ ["2" ,"2" , "2" , "40", "40", "40"]} fontWeight="semibold">
+      <Text mt={"2.5"} ml={ ["2" ,"2" , "2" , "40", "40", "40"]} 
+         fontWeight="regular"
+         fontFamily={"Work Sans"}>
          © 2022 All rights reserved
       </Text>
 

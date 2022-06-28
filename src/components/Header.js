@@ -1,16 +1,24 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { useColorMode } from '@chakra-ui/color-mode';
 import {  Stack, Flex, Box, Text,Spacer  } from '@chakra-ui/layout';
 import { Button, Image } from '@chakra-ui/react'
 import { FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
 import { IconButton } from '@chakra-ui/button';
 import { motion} from 'framer-motion'
-
+import WebFont from 'webfontloader';
 
 export default function Header() {
 
      const {colorMode} = useColorMode();
      const isDark = colorMode ==="dark";
+
+     useEffect(() => {
+          WebFont.load({
+            google: {
+              families: ['Comfortaa', 'Work Sans']
+            }
+          });
+         }, []);
     
      return (
           <Stack >
@@ -29,16 +37,21 @@ export default function Header() {
                               fontFamily={"Comfortaa"}  >
                                    Hello, my name is 
                          </Text>
-                         <Text as={motion.div} initial={{x: -500}} animate={{x:0}} transition={{delay:1}}
+                         <Text as={motion.div} initial={{x: -500}} animate={{x:0}} 
+                              transition={{delay:1}}
                               fontSize={["5xl","5xl","5xl","7xl","7xl","7xl"]} 
                               fontFamily={"Comfortaa"}
-                              fontWeight="bold" bgGradient="linear(to-r, coral, violet, purple)" bgClip='text'>
+                              fontWeight="bold" 
+                              bgGradient="linear(to-r, coral, violet, purple)" 
+                              bgClip='text'>
                                    Nicola Ivanov
                          </Text >
-                         <Text pt={"5"}   fontSize={["xl","xl","xl","2xl","2xl","2xl"]} 
+
+                         <Text pt={"5"}   
+                              fontSize={["xl","2xl","2xl","3xl","3xl","3xl"]} 
                               color={isDark ? "gray.200" : "black"}
-                              >
-                                   I am a young developer, studying at MTUCI. I work on  various C++, Java, Python, Mathlab,<br></br>Web design and Art projects.
+                              fontFamily={"Work Sans"}>
+                                   I am a young developer, studying at MTUCI. I work on  various C++,<br></br> Java, Python, Mathlab,Web design and Art projects.
                          </Text>
                          <Spacer>
 
