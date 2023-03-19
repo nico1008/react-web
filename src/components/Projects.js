@@ -39,7 +39,7 @@ export default function () {
           <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1 }} 
             ml={[ 2,2,2,4,4,4]} 
             rounded={"3xl"} direction="column" mt={"4"} bg="blue.400" h="40vh" w="40vh" 
-            justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")} >
+            justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/CPP")} >
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={SiCplusplus} w="12vh" h="12vh" ></Icon>
 
@@ -49,7 +49,7 @@ export default function () {
           
           <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1  }}
            rounded={"3xl"} direction="column" mt={"4"}  ml={[ 2,2,2,4,4,4]} 
-           bg="pink.200" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
+           bg="pink.200" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/Java")}>
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaJava} w="12vh" h="12vh"></Icon>
 
@@ -59,7 +59,7 @@ export default function () {
 
           <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1}}
             rounded={"3xl"} direction="column" mt={"4"} ml={[ 2,2,2,4,4,4]}  
-            bg="blue.500" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008")}>
+            bg="blue.500" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/SIAOD")}>
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaPython} w="12vh" h="12vh"></Icon>
 
