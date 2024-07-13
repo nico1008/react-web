@@ -28,9 +28,9 @@ function App() {
   return(
     <VStack p={5} pb={0}>
       <Flex as={motion.div} initial={{y: -100}} animate={{y:0}} transition={{delay:1}}
-       w="100%" mb="20px" >
+       w="100%" mb="35px" >
         <Heading fontFamily={"Comfortaa"} ml ="2" mt={"1.5"} size="lg" fontWeight='Bold' color="violet">
-          Nico
+          Nico1008
         </Heading>
       
       <Spacer>

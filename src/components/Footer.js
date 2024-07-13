@@ -28,7 +28,7 @@ export default function Footer() {
       <Text mt={"2.5"} ml={ ["2" ,"2" , "2" , "40", "40", "40"]} 
          fontWeight="regular"
          fontFamily={"Work Sans"}>
-         © 2022 All rights reserved
+         © 2024 All rights reserved
       </Text>
 
      <Spacer/>
