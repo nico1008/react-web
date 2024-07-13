@@ -1,7 +1,3 @@
-Here's an updated version of the README file for your React project:
-
----
-
 # React Web
 
 ![React](https://img.shields.io/badge/React-18.2.0-blue.svg)
