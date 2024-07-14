@@ -40,19 +40,19 @@ function App() {
       
         bgGradient="linear(to-b, violet,blue.500 )" icon={<FaBehance/>}
         isRound='true' onClick={()=>window.open("https://www.behance.net/nico_1008")}  
-        _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+        _hover={{ bgGradient: 'linear(to-t,green.400,green.200)',}}></IconButton>
 
       <IconButton ml={5} size={useBreakpointValue(['md','md','md', 'lg', 'lg', 'lg'])}
 
         bgGradient="linear(to-b, violet,blue.500 )" icon={<FaGithub/>} 
         isRound='true' onClick={()=>window.open("https://github.com/nico1008")}  
-        _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+        _hover={{ bgGradient: 'linear(to-t,green.400,green.200)',}}></IconButton>
 
       <IconButton ml={5} size={useBreakpointValue(['md','md','md', 'lg', 'lg', 'lg'])}
 
         bgGradient="linear(to-b, violet,blue.500 )" icon={<FaTelegram/>}
         isRound='true' onClick={()=>window.open("https://t.me/nico_1008k")} 
-        _hover={{ bgGradient: 'linear(to-t, #D91E98, #F2226E)',}}></IconButton>
+        _hover={{ bgGradient: 'linear(to-t,green.400,green.200)',}}></IconButton>
 
       <IconButton as={motion.div} whileHover={{rotate:360}} 
         ml={[ "5" , "5" , "5" , "20" , "20" , "20"]}

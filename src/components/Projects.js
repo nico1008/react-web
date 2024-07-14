@@ -9,8 +9,6 @@ import { motion} from 'framer-motion'
 import WebFont from 'webfontloader';
 
 
-
-
 export default function () {
 
   const {colorMode} = useColorMode();
@@ -36,34 +34,33 @@ export default function () {
 
         <Flex direction={['column', 'column', 'column', 'row', 'row', 'row']} mt={8}>
 
-          <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1 }} 
-            ml={[ 2,2,2,4,4,4]} 
-            rounded={"3xl"} direction="column" mt={"4"} bg="blue.400" h="40vh" w="40vh" 
-            justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/CPP")} >
+          <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1}}
+            rounded={"3xl"} direction="column" mt={"4"} ml={[ 2,2,2,4,4,4]}  
+            bg="blue.500" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/paint2code")}>
 
-            <Icon color={isDark ? "gray.200" : "black"} p="4" as={SiCplusplus} w="12vh" h="12vh" ></Icon>
+            <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaPython} w="12vh" h="12vh"></Icon>
 
-            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> C++</Text>
+            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> HTML Generator</Text>
 
           </Flex>
           
           <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1  }}
            rounded={"3xl"} direction="column" mt={"4"}  ml={[ 2,2,2,4,4,4]} 
-           bg="pink.200" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/Java")}>
+           bg="purple" h = "40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/Mushrooms")}>
 
-            <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaJava} w="12vh" h="12vh"></Icon>
+            <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaPython} w="12vh" h="12vh"></Icon>
 
-            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> Java</Text>
+            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> Mushroom classifier</Text>
 
           </Flex>
 
           <Flex as={motion.div} whileHover={{scale:1.2,boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)", cursor: "pointer"}} whileTap={{ scale: 1.1}}
             rounded={"3xl"} direction="column" mt={"4"} ml={[ 2,2,2,4,4,4]}  
-            bg="blue.500" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/SIAOD")}>
+            bg="blueviolet" h="40vh" w="40vh" justify={"flex-end"} onClick={()=>window.open("https://github.com/nico1008/TwitchSentiment")}>
 
             <Icon color={isDark ? "gray.200" : "black"} p="4" as={FaPython} w="12vh" h="12vh"></Icon>
 
-            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> Python</Text>
+            <Text color={isDark ? "gray.200" : "black"} p="4" fontSize={"4xl"}  fontFamily={"Rubik"}> Twitch sentiment</Text>
 
           </Flex>
 
