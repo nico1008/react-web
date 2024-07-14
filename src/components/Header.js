@@ -1,6 +1,6 @@
 import { React, useEffect} from 'react'
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Stack, Flex, Box, Text,Spacer  } from '@chakra-ui/layout';
+import { Stack, Flex, Box, Text } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/react'
 import { motion} from 'framer-motion'
 import WebFont from 'webfontloader';
