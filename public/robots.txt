@@ -1,3 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Add your sitemap if you have one
+Sitemap: https://nico1008.github.io/react-web/sitemap.xml

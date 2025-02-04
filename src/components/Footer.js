@@ -1,57 +1,91 @@
-import {React, useEffect} from 'react'
+import {React} from 'react'
 import { IconButton } from '@chakra-ui/button';
-import {Flex, Text,Spacer  } from '@chakra-ui/layout';
-import { FaGithub,FaTelegram,FaBehance } from 'react-icons/fa'
+import {Flex, Text, Spacer} from '@chakra-ui/layout';
+import { FaGithub, FaTelegram, FaBehance } from 'react-icons/fa'
 import { useColorMode } from '@chakra-ui/color-mode';
-import WebFont from 'webfontloader';
+
+// Define social links with uniform hover color
+const SOCIAL_LINKS = [
+  {
+    icon: FaBehance,
+    url: "https://www.behance.net/nico_1008",
+    ariaLabel: "Behance Profile",
+  },
+  {
+    icon: FaGithub,
+    url: "https://github.com/nico1008",
+    ariaLabel: "GitHub Profile",
+  },
+  {
+    icon: FaTelegram,
+    url: "https://t.me/nico_1008k",
+    ariaLabel: "Telegram Profile",
+  }
+];
 
 export default function Footer() {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === "dark";
 
-     const { colorMode} = useColorMode();
-     const isDark = colorMode ==="dark";
+  const iconButtonStyles = {
+    mr: ["2", "2", "2", "6", "6", "6"],
+    mt: ["2.5", "2.5", "2.5", "1", "1", "1"],
+    size: "md",
+    color: isDark ? "white" : "gray.800",
+    bg: isDark ? "whiteAlpha.200" : "gray.100",
+    _hover: {
+      transform: "scale(1.1)",
+      bg: isDark ? "whiteAlpha.300" : "gray.200",
+    },
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+  };
 
-     useEffect(() => {
-      WebFont.load({
-        google: {
-          families: ['Comfortaa', 'Roboto']
+  const iconStyles = {
+    sx: {
+      "& > *": {
+        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      "&:hover": {
+        "& > *": {
+          color: "#0057FF",
         }
-      });
-     }, []);
-     
+      }
+    }
+  };
 
   return (
-     <Flex backgroundColor={isDark ? "#2953A6" : "#00FF80"} borderTopRadius="40px"  
-      p="2"  pl={ [4 ,4 ,4 , 16, 16, 16]} 
-      alignSelf="flex-start" width={"100%"} >
-      
-     
-      <Text mt={"2.5"} ml={ ["2" ,"2" , "2" , "40", "40", "40"]} 
-         fontWeight="regular"
-         fontFamily={"Work Sans"}>
-         © 2024 All rights reserved
+    <Flex
+      backgroundColor={isDark ? "#2953A6" : "#E3F2FD"}
+      borderTopRadius="40px"
+      p="2"
+      pl={[4, 4, 4, 16, 16, 16]}
+      alignSelf="flex-start"
+      width="100%"
+    >
+      <Text
+        mt="2.5"
+        ml={["2", "2", "2", "40", "40", "40"]}
+        fontWeight="regular"
+        fontFamily="Work Sans"
+      >
+        © {new Date().getFullYear()} All rights reserved
       </Text>
 
-     <Spacer/>
-     
-     <IconButton size="md" icon={<FaBehance/>} 
-      mr={ [ "2" ,"2" ,"2" , "6" , "6" , "6"]} 
-      mt={ [ "2.5", "2.5", "2.5","1" ,"1" ,"1" ]} 
-      onClick={()=>window.open("https://www.behance.net/nico_1008")} ></IconButton>
-     
-    
-     <IconButton size="md" icon={<FaGithub/>}  
-      mr={ [ "2" ,"2" ,"2" , "6" , "6" , "6"]} 
-      mt={ [ "2.5", "2.5", "2.5","1" ,"1" ,"1" ]} 
-      onClick={()=>window.open("https://github.com/nico1008")} ></IconButton>
-     
-     
-     <IconButton size="md" icon={<FaTelegram/>} 
-      mr={ ["4" ,"4" ,"4" , "40", "40", "40"]} 
-      mt={ [ "2.5", "2.5", "2.5","1" ,"1" ,"1" ]} 
-      onClick={()=>window.open("https://t.me/nico_1008k")}  ></IconButton>
-     
-     
-   </Flex >
+      <Spacer />
 
+      {SOCIAL_LINKS.map((link, index) => (
+        <IconButton
+          key={index}
+          icon={<link.icon />}
+          onClick={() => window.open(link.url)}
+          aria-label={link.ariaLabel}
+          {...iconButtonStyles}
+          {...iconStyles}
+          {...(index === SOCIAL_LINKS.length - 1 && {
+            mr: ["4", "4", "4", "40", "40", "40"]
+          })}
+        />
+      ))}
+    </Flex>
   )
 }
