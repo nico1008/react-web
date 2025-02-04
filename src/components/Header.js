@@ -2,7 +2,7 @@ import React from 'react'
 import { useColorMode } from '@chakra-ui/color-mode'
 import { Stack, Flex, Box, Text } from '@chakra-ui/layout'
 import { Image } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import WebFont from 'webfontloader';
 
 // Define tech stack images as constants
@@ -10,40 +10,100 @@ const TECH_STACK = [
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg",
     alt: "PyTorch",
-    boxSize: "40px",
+    boxSize: { base: "25px", md: "40px" },
     mr: "4"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg",
     alt: "NumPy",
-    boxSize: "140px",
+    boxSize: { base: "90px", md: "140px" },
     mr: "0"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
     alt: "TensorFlow",
-    boxSize: "40px",
+    boxSize: { base: "25px", md: "40px" },
     mr: "4"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg",
     alt: "Pandas",
-    boxSize: "140px",
+    boxSize: { base: "90px", md: "140px" },
     mr: "0"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg",
     alt: "Jupyter Notebook",
-    boxSize: "50px",
+    boxSize: { base: "30px", md: "50px" },
     mr: "4"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
     alt: "Python",
-    boxSize: "50px",
+    boxSize: { base: "30px", md: "50px" },
     mr: "4"
   }
 ];
+
+const StaggeredText = ({ text }) => {
+  const letters = Array.from(text);
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.03, delayChildren: 0.2 }
+    }
+  };
+  
+  const child = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 200
+      }
+    },
+    hidden: {
+      opacity: 0,
+      y: 20
+    }
+  };
+
+  return (
+    <motion.div
+      style={{ display: "flex", overflow: "hidden" }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
+    >
+      {letters.map((letter, index) => (
+        <motion.span key={index} variants={child}>
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};
+
+const TechStackImage = ({ tech }) => {
+  return (
+    <motion.div
+      whileHover={{ 
+        scale: 1.1,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <Image
+        src={tech.src}
+        alt={tech.alt}
+        boxSize={tech.boxSize}
+        mr={tech.mr}
+      />
+    </motion.div>
+  );
+};
 
 export default function Header() {
   const { colorMode } = useColorMode();
@@ -53,7 +113,7 @@ export default function Header() {
     backgroundColor: isDark ? '#2953A6' : '#E3F2FD', // Light blue background
     borderRadius: "20px",
     direction: ['column', 'column', 'row'],
-    spacing: "200px",
+    spacing: "100px",
     p: ["4", "4", "32"],
     pl: ["4", "4", "16"],
     alignSelf: "flex-start"
@@ -104,30 +164,24 @@ export default function Header() {
   return (
     <Stack>
       <Flex {...headerStyles}>
-        <Box mt={["5", "5", "12"]} pr={["0", "0", "150px"]} align="flex-start">
+        <Box mt={["5", "5", "12"]} pr={["0", "0", "170px"]} align="flex-start">
           <Text fontSize={["3xl", "4xl", "5xl"]} fontWeight="semibold" fontFamily="Comfortaa" color={isDark ? 'gray.200' : 'gray.700'}>
             Hello, my name is
           </Text>
           
           <Text {...nameTextStyles}>
-            Nicola Ivanov
+            <StaggeredText text="Nicola Ivanov" />
           </Text>
           
-          <Text {...bioTextStyles}>
-            I am a young developer working on various machine learning projects.
-            <br />
-            Love to work with big data and computer vision.
+          <Text {...bioTextStyles} textAlign="justify">
+            Passionate ML engineer specializing in computer vision and deep learning.
+            {" "}
+            Transforming complex data into innovative solutions through AI.
           </Text>
 
           <Flex pt="5" justifyContent="flex-start" alignItems="center" spacing="4">
             {TECH_STACK.map((tech, index) => (
-              <Image
-                key={index}
-                src={tech.src}
-                alt={tech.alt}
-                boxSize={tech.boxSize}
-                mr={tech.mr}
-              />
+              <TechStackImage key={index} tech={tech} />
             ))}
           </Flex>
         </Box>
