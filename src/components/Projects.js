@@ -8,7 +8,6 @@ import { motion } from 'framer-motion'
 import WebFont from 'webfontloader';
 import { useInView } from 'react-intersection-observer';
 
-// Define projects data
 const PROJECTS = [
   {
     title: "HTML Generator",

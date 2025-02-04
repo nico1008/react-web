@@ -4,7 +4,6 @@ import {Flex, Text, Spacer} from '@chakra-ui/layout';
 import { FaGithub, FaTelegram, FaBehance } from 'react-icons/fa'
 import { useColorMode } from '@chakra-ui/color-mode';
 
-// Define social links with uniform hover color
 const SOCIAL_LINKS = [
   {
     icon: FaBehance,

@@ -6,16 +6,13 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 
-// Create theme config with dark mode as default
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: false,
 }
 
-// Extend the theme with config
 const theme = extendTheme({ config })
 
-// Lazy load components
 const HeaderLazy = React.lazy(() => import('./components/Header'))
 const ProjectsLazy = React.lazy(() => import('./components/Projects'))
 const FooterLazy = React.lazy(() => import('./components/Footer'))

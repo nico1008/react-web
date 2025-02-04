@@ -5,7 +5,6 @@ import { Image } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import WebFont from 'webfontloader';
 
-// Define tech stack images as constants
 const TECH_STACK = [
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg",
@@ -110,7 +109,7 @@ export default function Header() {
   const isDark = colorMode === 'dark';
 
   const headerStyles = {
-    backgroundColor: isDark ? '#2953A6' : '#E3F2FD', // Light blue background
+    backgroundColor: isDark ? '#2953A6' : '#E3F2FD', 
     borderRadius: "20px",
     direction: ['column', 'column', 'row'],
     spacing: "100px",
@@ -129,14 +128,14 @@ export default function Header() {
     fontWeight: "bold",
     bgGradient: isDark 
       ? "linear(to-r, coral, violet, purple)"
-      : "linear(to-r, blue.400, purple.500, pink.500)", // Softer gradient for light mode
+      : "linear(to-r, blue.400, purple.500, pink.500)", 
     bgClip: "text"
   };
 
   const bioTextStyles = {
     pt: "5",
     fontSize: ["xl", "2xl", "3xl"],
-    color: isDark ? 'gray.200' : 'gray.700', // Darker gray for better readability
+    color: isDark ? 'gray.200' : 'gray.700', 
     fontFamily: "Work Sans"
   };
 
