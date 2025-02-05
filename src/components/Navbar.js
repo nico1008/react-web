@@ -42,7 +42,7 @@ const Navbar = () => {
       <HStack spacing={4}>
         <Text
           fontFamily="Comfortaa"
-          fontSize="3xl"
+          fontSize={["xl", "2xl", "3xl"]}
           fontWeight="bold"
           bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
           bgClip="text"

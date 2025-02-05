@@ -6,7 +6,7 @@ import { GiPencilBrush } from 'react-icons/gi'
 import { useColorMode } from '@chakra-ui/color-mode'
 import { motion } from 'framer-motion'
 import WebFont from 'webfontloader';
-import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer'
 
 const PROJECTS = [
   {
