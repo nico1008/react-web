@@ -133,7 +133,6 @@ export default function Projects() {
       w="100%" 
       align="center" 
       justify="center" 
-      py={8}
       position="relative"
     >
       <Text
@@ -142,7 +141,7 @@ export default function Projects() {
         fontSize={["3xl", "4xl", "6xl"]}
         textAlign="center"
       >
-        Here are some of my projects:
+        My projects:
       </Text>
 
       <Flex

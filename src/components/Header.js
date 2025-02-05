@@ -116,6 +116,8 @@ export default function Header() {
     spacing: "100px",
     p: ["4", "4", "32"],
     pl: ["4", "4", "16"],
+    pb: ["16", "20", "32"],
+    mb: ["16", "20", "32"],
     alignSelf: "flex-start"
   };
 
