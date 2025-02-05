@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useColorMode } from '@chakra-ui/color-mode'
 import { Stack, Flex, Box, Text } from '@chakra-ui/layout'
 import { Image } from '@chakra-ui/react'
@@ -107,6 +107,7 @@ const TechStackImage = ({ tech }) => {
 export default function Header() {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const headerStyles = {
     backgroundColor: isDark ? '#2953A6' : '#E3F2FD', 
@@ -140,6 +141,7 @@ export default function Header() {
   };
 
   const profileImageStyles = {
+    as: motion.img,
     alignSelf: "center",
     mt: ["10", "10", "0"],
     mb: ["0", "0", "10"],
@@ -149,7 +151,62 @@ export default function Header() {
     boxSize: ["250px", "250px", "400px"],
     opacity: 1,
     border: "8px solid black",
-    src: "https://avatars.githubusercontent.com/u/70664528?s=400&u=861e9fafb08a103ed6de3852531877eecfa63036&v=4"
+    src: "https://avatars.githubusercontent.com/u/70664528?s=400&u=861e9fafb08a103ed6de3852531877eecfa63036&v=4",
+    style: {
+      transformStyle: "preserve-3d",
+      transition: "transform 0.1s ease-out"
+    },
+    whileHover: { 
+      scale: 1.1,
+      transition: { 
+        duration: 0.2 
+      }
+    },
+    initial: {
+      rotateX: 0,
+      rotateY: 0
+    },
+    animate: {
+      y: isFlipped ? [-100, 0] : 0,
+      rotateY: isFlipped ? [0, 720] : 0,
+      transition: {
+        duration: 0.8,
+        y: {
+          type: "spring",
+          stiffness: 200,
+          damping: 15
+        },
+        rotateY: {
+          duration: 0.8,
+          ease: "easeInOut"
+        }
+      }
+    },
+    onAnimationComplete: () => {
+      if (isFlipped) {
+        setIsFlipped(false);
+      }
+    },
+    onClick: () => setIsFlipped(true),
+    onMouseMove: (e) => {
+      if (!isFlipped) {
+        const { currentTarget, clientX, clientY } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        
+        const x = Math.min(Math.max((clientX - centerX) / 10, -15), 15);
+        const y = Math.min(Math.max((clientY - centerY) / 10, -15), 15);
+        
+        currentTarget.style.transform = `perspective(1000px) rotateX(${-y}deg) rotateY(${x}deg) scale3d(1.1, 1.1, 1.1)`;
+      }
+    },
+    onMouseLeave: (e) => {
+      if (!isFlipped) {
+        e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      }
+    }
   };
 
   React.useEffect(() => {
